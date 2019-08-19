@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LeoPro</string>
+    <string name="network_unknow">当前网络不可用,请检查网络再试</string>
+    <string name="network_overtime">请求超时,请稍后再试</string>
+    <string name="server_error">服务器异常,请稍后再试</string>
+    <string name="filter_vcode">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_forget"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="忘记密码"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line" />
+        <TextView
+            android:id="@+id/text_webview"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="webView页面"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/text_dialog"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="仿ios diaolog，更多样式在项目中"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/text_download"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="内置更新"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@mipmap/solinkanim_1"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_2"
+        android:duration="50" />
+
+
+    <item
+        android:drawable="@mipmap/solinkanim_3"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_4"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_5"
+        android:duration="50" />
+
+
+    <item
+        android:drawable="@mipmap/solinkanim_6"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_7"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_8"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_9"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_10"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_11"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_12"
+        android:duration="50" />
+    <item
+        android:drawable="@mipmap/solinkanim_13"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_14"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_15"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_16"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_17"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_18"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_19"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_20"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_21"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_22"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_23"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_24"
+        android:duration="50" />
+
+    <item
+        android:drawable="@mipmap/solinkanim_25"
+        android:duration="50" />
+
+
+</animation-list>

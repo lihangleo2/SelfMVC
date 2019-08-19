@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_276"
+        android:layout_height="@dimen/dp_192"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_update_">
+
+        <ImageView
+            android:id="@+id/image_title"
+            android:layout_width="@dimen/dp_276"
+            android:layout_height="@dimen/dp_87"
+            android:scaleType="fitStart"
+            android:src="@mipmap/update_top" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/image_title">
+
+            <!-- 确认升级的按钮 -->
+            <RelativeLayout
+                android:id="@+id/relative_showApp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                >
+
+                <TextView
+                    android:id="@+id/text_message"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="已检测到最新版本,请升级应用"
+                    android:textColor="@color/black66"
+                    android:textSize="@dimen/sp_8" />
+
+                <RelativeLayout
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/relative_btn"
+                    android:layout_width="@dimen/dp_180"
+                    android:layout_height="@dimen/dp_62"
+                    android:layout_below="@+id/edit_CommitpassWord"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:id="@+id/text_update"
+                        android:layout_width="@dimen/dp_180"
+                        android:layout_height="@dimen/dp_22"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/shape_jianb"
+                        android:gravity="center"
+                        android:text="确认升级"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_8" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!-- 正在升级的按钮 -->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/relative_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                >
+
+                <TextView
+                    android:id="@+id/text_message_loading"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="正在下载"
+                    android:textColor="@color/black66"
+                    android:textSize="@dimen/sp_8" />
+
+                <ProgressBar
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_9"
+                    android:layout_below="@+id/text_message_loading"
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/dp_174"
+                    android:layout_height="3dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:layout_gravity="center_vertical"
+                    android:progressDrawable="@drawable/progressbar" />
+
+
+                <TextView
+                    android:id="@+id/progress_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_7"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#F6C45C"
+                    android:text="0%"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

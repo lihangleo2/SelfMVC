@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--纯滚动模式-->
+    <!--pp:srlEnablePureScrollMode="true"-->
+    <!--如果是这种就可以，控制上方纯滚动，下方加载的效果-->
+    <!--app:srlEnableOverScrollDrag="true"-->
+    <!--app:srlEnableLoadMore="true"-->
+    <!--app:srlEnableRefresh="false"-->
+    <!--取消自动加载-->
+    <!--app:srlEnableAutoLoadMore="false"-->
+    <!--列表不足一屏幕时也能加载更多-->
+    <!--app:srlEnableLoadMoreWhenContentNotFull="true"-->
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableAutoLoadMore="false"
+        app:srlEnableLoadMoreWhenContentNotFull="true">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <ImageView
+        android:id="@+id/floatbutton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/backtop"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/buttonPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get请求" />
+
+    <Button
+        android:layout_below="@+id/buttonPanel"
+        android:id="@+id/buttonPane2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传文件" />
+
+
+</RelativeLayout>

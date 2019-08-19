@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--纯滚动模式-->
+    <!--pp:srlEnablePureScrollMode="true"-->
+    <!--如果是这种就可以，控制上方纯滚动，下方加载的效果-->
+    <!--app:srlEnableOverScrollDrag="true"-->
+    <!--app:srlEnableLoadMore="true"-->
+    <!--app:srlEnableRefresh="false"-->
+
+    <com.lihang.leopro.customview.horismartrefresh.SmartRefreshHorizontal
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:srlEnableLoadMore="true"
+        app:srlEnableOverScrollDrag="true"
+        app:srlEnableRefresh="false">
+
+        <com.scwang.smartrefresh.header.WaterDropHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        <com.scwang.smartrefresh.header.WaterDropHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.lihang.leopro.customview.horismartrefresh.SmartRefreshHorizontal>
+
+
+    <com.lihang.ShadowLayout
+        android:id="@+id/shadow_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:hl_cornerRadius="@dimen/dp_18"
+        app:hl_dx="0dp"
+        app:hl_dy="2dp"
+        app:hl_shadowColor="#2aff0000"
+        app:hl_shadowLimit="5dp">
+
+        <TextView
+            android:id="@+id/text_quanx"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_36"
+            android:background="@drawable/shape_show_"
+            android:gravity="center"
+            android:text="阴影控件,触发权限"
+            android:textColor="@color/black" />
+
+    </com.lihang.ShadowLayout>
+</RelativeLayout>
