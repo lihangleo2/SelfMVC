@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class LogUtils {
 
-    //可以全局控制是否打印log日志
+   //可以全局控制是否打印log日志
     private static boolean isEnableLog = true;
     private static int LOG_MAXLENGTH = 4000;
     public static final String TAG = LogUtils.class.getSimpleName();
@@ -25,6 +25,10 @@ public class LogUtils {
 
     public static void v(String tagName, String msg) {
         if (isEnableLog) {
+            if (msg == null) {
+                Log.v(tagName, "null");
+                return;
+            }
             int strLength = msg.length();
             int start = 0;
             int end = LOG_MAXLENGTH;
@@ -59,6 +63,10 @@ public class LogUtils {
 
     public static void d(String tagName, String msg) {
         if (isEnableLog) {
+            if (msg == null) {
+                Log.d(tagName, "null");
+                return;
+            }
             int strLength = msg.length();
             int start = 0;
             int end = LOG_MAXLENGTH;
@@ -94,6 +102,10 @@ public class LogUtils {
 
     public static void i(String tagName, String msg) {
         if (isEnableLog) {
+            if (msg == null) {
+                Log.i(tagName, "null");
+                return;
+            }
             int strLength = msg.length();
             int start = 0;
             int end = LOG_MAXLENGTH;
@@ -128,6 +140,10 @@ public class LogUtils {
 
     public static void w(String tagName, String msg) {
         if (isEnableLog) {
+            if (msg == null) {
+                Log.w(tagName, "null");
+                return;
+            }
             int strLength = msg.length();
             int start = 0;
             int end = LOG_MAXLENGTH;
@@ -162,6 +178,10 @@ public class LogUtils {
 
     public static void e(String tagName, String msg) {
         if (isEnableLog) {
+            if (msg == null) {
+                Log.e(tagName, "null");
+                return;
+            }
             int strLength = msg.length();
             int start = 0;
             int end = LOG_MAXLENGTH;
