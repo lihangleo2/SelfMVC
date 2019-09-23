@@ -19,10 +19,13 @@ public class PARAMS {
     /**
      * 登录
      */
-    public static HashMap<String, String> login(String phone,String password) {
+    public static HashMap<String, String> login(String username,String password,String grant_type,String scope,String userType) {
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("mobilenumber", phone);
+        map.put("username", username);
         map.put("password", password);
+        map.put("grant_type", grant_type);
+        map.put("scope", scope);
+        map.put("userType", userType);
         return map;
     }
 

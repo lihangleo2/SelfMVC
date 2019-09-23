@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by leo
@@ -20,6 +21,11 @@ public class ParamsBuilder {
     private HashMap<String, String> heads;
     //网络请求需要带的参数(选填，不填为null)
     private HashMap<String, String> params;
+    /*
+     * post需要拼接在url后面的参数
+     * */
+    private Map<String, String> postUrlParams;
+
     //网络loading需要带的文字信息(选填，不填为null)
     private String loadMessage;
     //是否显示网络loading(默认为显示loading)
@@ -151,6 +157,11 @@ public class ParamsBuilder {
 
     public ParamsBuilder heads(HashMap<String, String> heads) {
         this.heads = heads;
+        return this;
+    }
+
+    public ParamsBuilder postUrlParams(HashMap<String, String> postUrlParams) {
+        this.postUrlParams = postUrlParams;
         return this;
     }
 
@@ -325,5 +336,13 @@ public class ParamsBuilder {
 
     public void setResume(boolean resume) {
         this.resume = resume;
+    }
+
+    public Map<String, String> getPostUrlParams() {
+        return postUrlParams;
+    }
+
+    public void setPostUrlParams(Map<String, String> postUrlParams) {
+        this.postUrlParams = postUrlParams;
     }
 }

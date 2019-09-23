@@ -1,8 +1,8 @@
 package com.lihang.leopro.model;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Pair;
 
@@ -30,8 +30,8 @@ public abstract class ModelBase {
     //okhttp get请求
     public void sendOkHttpGet(final ParamsBuilder paramsBuilder, final NetWorkListener netWorkListener) {
         final Context context;
-        if (netWorkListener instanceof AppCompatActivity) {
-            context = (AppCompatActivity) netWorkListener;
+        if (netWorkListener instanceof Activity) {
+            context = (Activity) netWorkListener;
         } else if (netWorkListener instanceof Fragment) {
             context = ((Fragment) netWorkListener).getActivity();
         } else {
@@ -151,8 +151,8 @@ public abstract class ModelBase {
     //okhttp post请求
     public void sendOkHttpPost(final ParamsBuilder paramsBuilder, final NetWorkListener netWorkListener) {
         final Context context;
-        if (netWorkListener instanceof AppCompatActivity) {
-            context = (AppCompatActivity) netWorkListener;
+        if (netWorkListener instanceof Activity) {
+            context = (Activity) netWorkListener;
         } else if (netWorkListener instanceof Fragment) {
             context = ((Fragment) netWorkListener).getActivity();
         } else {
@@ -171,6 +171,7 @@ public abstract class ModelBase {
                 .headers(paramsBuilder.getHeads())
                 //内部已经做了null处理
                 .params(paramsBuilder.getParams())
+                .postUrlParams(paramsBuilder.getPostUrlParams())
                 .json(paramsBuilder.getJson())
                 //默认只请求一次
                 .onlyOneNet(paramsBuilder.isOnlyOneNet())
@@ -279,8 +280,8 @@ public abstract class ModelBase {
     //okhttp 上传文件;不同file不同key
     public void sendOkHttpUpload(final ParamsBuilder paramsBuilder, final NetWorkListener netWorkListener, Pair<String, File>... files) {
         final Context context;
-        if (netWorkListener instanceof AppCompatActivity) {
-            context = (AppCompatActivity) netWorkListener;
+        if (netWorkListener instanceof Activity) {
+            context = (Activity) netWorkListener;
         } else if (netWorkListener instanceof Fragment) {
             context = ((Fragment) netWorkListener).getActivity();
         } else {

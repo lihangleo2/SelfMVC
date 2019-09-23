@@ -35,6 +35,7 @@ import com.lihang.leopro.bean.basebean.User;
 import com.lihang.leopro.common.JSONS;
 import com.lihang.leopro.common.PARAMS;
 import com.lihang.leopro.common.SystemConst;
+import com.lihang.leopro.model.ModelSuperImpl;
 import com.lihang.leopro.model.NetWorkListener;
 import com.lihang.leopro.utils.KeyBoardUtils;
 import com.lihang.leopro.utils.LogUtils;
@@ -55,7 +56,7 @@ import static com.lihang.leopro.utils.KeyBoardUtils.isShouldHideInput;
  * 适配任何比例视频，类似ImageView的centerCrop.
  */
 
-public class LoginActivity extends BaseActivity implements SurfaceHolder.Callback {
+public class LoginActivity extends BaseActivity implements SurfaceHolder.Callback,NetWorkListener {
     final int LOGIN_TYPE = 99;
     final int UPLOAD_TYPE = 100;
     @BindView(R.id.video_view)
@@ -128,7 +129,8 @@ public class LoginActivity extends BaseActivity implements SurfaceHolder.Callbac
                 //这里模拟联网操作
                 mHandler.sendEmptyMessageDelayed(11, 2000);
 
-
+                ModelSuperImpl.netWork().gankPost(ParamsBuilder.build().postUrlParams(PARAMS.login("admin","elcrD28ZSLLtR0VLs/jERA==","password","server","1"))
+                        .command(LOGIN_TYPE),LoginActivity.this);
                 //正常网络请求 正常
 //                getLogin(getStringByUI(edit_phone), getStringByUI(edit_passworld));
                 //现在的图片上传
@@ -274,4 +276,8 @@ public class LoginActivity extends BaseActivity implements SurfaceHolder.Callbac
     }
 
 
+    @Override
+    public void onNetCallBack(int command, Object object) {
+
+    }
 }

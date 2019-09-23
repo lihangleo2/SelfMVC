@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.net.ConnectException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
+import java.util.HashMap;
 import java.util.Map;
 
 import okhttp3.Call;
@@ -49,6 +50,8 @@ public class OkPostBuilder {
     private Map<String, String> headers;
     //post 键值对参数 (参数类型有很多，如键值对，string,byte,file,json等，这里主要封装2中json和键值对)
     private Map<String, String> params;
+    //需要拼接在post请求参数的参数
+    private Map<String, String> postUrlParams;
     //json 参数
     private String json;
     private boolean onlyOneNet;
@@ -76,7 +79,12 @@ public class OkPostBuilder {
     public OkPostBuilder build() {
         Request.Builder mBuilder = new Request.Builder();
         validParams();
-        mBuilder.url(url);
+        if (postUrlParams != null) {
+            mBuilder.url(appendParams(url, postUrlParams));
+        } else {
+            mBuilder.url(url);
+        }
+
         LogUtils.i("网络请求", "请求接口 ==> " + url);
 
         if (!TextUtils.isEmpty(tag)) {
@@ -360,6 +368,11 @@ public class OkPostBuilder {
         return this;
     }
 
+    public OkPostBuilder postUrlParams(Map<String, String> postUrlParams) {
+        this.postUrlParams = postUrlParams;
+        return this;
+    }
+
 
     //拼接头部参数
     public Headers appendHeaders(Map<String, String> headers) {
@@ -400,8 +413,32 @@ public class OkPostBuilder {
         }
 
         if (count <= 0 || count > 1) {
-            throw new IllegalArgumentException("the params must has one and only one .");
+            params = new HashMap<>();
+            type = TYPE_PARAMS;
+            count++;
+//            throw new IllegalArgumentException("the params must has one and only one .");
         }
+    }
+
+
+    //post 参数拼在url后面
+    private String appendParams(String url, Map<String, String> params) {
+        StringBuilder sb = new StringBuilder();
+        if (url.indexOf("?") == -1) {
+            sb.append(url + "?");
+        } else {
+            sb.append(url + "&");
+        }
+
+        if (params != null && !params.isEmpty()) {
+            for (String key : params.keySet()) {
+                sb.append(key).append("=").append(params.get(key)).append("&");
+            }
+        }
+
+        sb = sb.deleteCharAt(sb.length() - 1);
+        LogUtils.i("网络请求", "请求接口 ==>> " + sb.toString());
+        return sb.toString();
     }
 
 }

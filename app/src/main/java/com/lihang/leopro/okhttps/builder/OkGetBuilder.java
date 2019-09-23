@@ -70,7 +70,6 @@ public class OkGetBuilder {
             mBuilder.url(appendParams(url, params));
         } else {
             LogUtils.i("网络请求", "请求接口 ==>> " + url);
-
             mBuilder.url(url);
         }
 
