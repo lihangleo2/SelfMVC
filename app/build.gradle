@@ -100,7 +100,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     //我的控件
     implementation 'com.github.lihangleo2:SmartLoadingView:1.3.2'
-    implementation 'com.github.lihangleo2:ShadowLayout:2.0.1'
+    implementation 'com.github.lihangleo2:ShadowLayout:3.2.4rz'
     //沉浸式状态栏(其中已经对EditText做了处理)
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
     //标题
